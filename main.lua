@@ -14,19 +14,20 @@ local dayBox = native.newTextField(160, 200, 200, 40)
 
 local button = display.newRect(160, 300, 100, 100)
 
-local output = display.newText( "", 160, 400, "Arial", 25)
+local output = display.newText( "", 160, 400, 200, 80, "Arial", 25)
 
-local weirdText = display.newText( "", 160, 460, 200, 100, "Arial", 23)
+local weirdText = display.newText( "", 160, 460, 200, 90, "Arial", 23)
 
 local function Check ( event )
 
 local age = tonumber(ageBox.text)
-
+local day = dayBox.text
+print(age)
 weirdness(age) 
 
-	if ((age < 18) and (day ~= "Saturday" or day ~= "sunday" or day ~= "Sunday" or day ~= "sunday")) then
+	if ((age < 18) and (day ~= "Saturday" and day ~= "saturday" and day ~= "Sunday" and day ~= "sunday")) then
 		output.text = "Time for School!"
-	elseif ((age > 18) and (day ~= "Saturday" or day ~= "sunday" or day ~= "Sunday" or day ~= "sunday")) then
+	elseif ((age > 18) and (day ~= "Saturday" and day ~= "saturday" and day ~= "Sunday" and day ~= "sunday")) then
 		output.text = "Time for Work!"
 	else
 		output.text = "Time to relax for the weekend!"
